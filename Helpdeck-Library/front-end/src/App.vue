@@ -3,7 +3,7 @@
     <div class="ui inverted segment navbar">
       <div class="ui center aligned container">
         <div class="ui large secondary inverted pointing menu compact">
-          <router-link to="/helpdesk" exact class="item" >Helpdesk Library
+          <router-link to="/helpdesk" exact class="item" >
             <i class="comment outline icon"></i> Helpdesk
           </router-link>
           <router-link to="/helpdesk/new" class="item">
@@ -17,6 +17,7 @@
   </div>
 
   <div class="ui text container">
+    <flash-message class="myFlash"></flash-message>
     <div class="ui one colum grid">
       <div class="column">
         <router-view />
@@ -47,7 +48,7 @@ input {
   width: 300px;
 }
 div.label {
-  widtth: 120px;
+  width: 120px;
 }
 div.input {
   margin-bottom: 10px;

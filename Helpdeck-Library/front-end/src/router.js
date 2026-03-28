@@ -1,10 +1,10 @@
-import Vue form 'vue';
+import Vue from 'vue';
 import Router from 'vue-router';
-import HelpdeskList from './Views/Helpdesk.Vue';
-import New form './Views/New.Vue';
-import Show form './Views/Show.Vue';
-import Edit form './Views/Edit.Vue';
-import Test form './Views/Test.Vue';
+import Helpdesk from './Views/Helpdesk.vue';
+import New from './Views/New.vue';
+import Show from './Views/Show.vue';
+import Edit from './Views/Edit.vue';
+import Test from './Views/Test.vue';
 
 Vue.use(Router);
 

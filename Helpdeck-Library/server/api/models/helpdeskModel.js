@@ -4,15 +4,15 @@ const Schema = mongoose.Schema;
 
 const helpdeskSchema = new Schema(
     {
-        Code: {
+        code: {
             type: String,
             required: 'Key cannot be empty'
         },
-        Action: {
+        action: {
             type: String,
             required: 'Value cannot be empty'
         },
-        Description: {
+        description: {
             type: String
         }
     });
