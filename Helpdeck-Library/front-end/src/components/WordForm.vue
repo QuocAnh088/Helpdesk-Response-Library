@@ -15,7 +15,12 @@
             </div>
             <input type="text" v-model="helpdesk.action">
         </div>
-
+        <div class="ui labeled input fluid">
+            <div class="ui label">
+                <i class="infor circle icon"></i> Description
+            </div>
+            <input type="text" placeholder="Enter description ... " v-model="helpdesk.description">
+        </div>
         <button class="positive ui button" type="submit">Submit</button>
     </form>
 </template>

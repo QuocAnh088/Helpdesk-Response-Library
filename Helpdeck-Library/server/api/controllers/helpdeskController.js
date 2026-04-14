@@ -35,7 +35,7 @@ exports.update_a_helpdesk = async (req, res) => {
         const helpdesk = await Helpdesk.findByIdAndUpdate(
             {_id: req.params.helpdeskId},
             req.body,
-            {new: true}
+            { returnDocument: 'after' }
         );
         res.json(helpdesk);
     } catch (err) {
@@ -45,7 +45,7 @@ exports.update_a_helpdesk = async (req, res) => {
 
 exports.delete_a_helpdesk = async (req, res) => {
     try {
-        const helpdesk = await Helpdesk.findByIdAndRemove({_id: req.params.helpdeskId});
+        const helpdesk = await Helpdesk.findByIdAndDelete({_id: req.params.helpdeskId});
         res.json({ 
             message: 'Helpdesk deleted successfully',
             id: req.params.helpdeskId

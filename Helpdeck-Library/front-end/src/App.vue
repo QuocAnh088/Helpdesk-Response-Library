@@ -9,9 +9,6 @@
           <router-link to="/helpdesk/new" class="item">
             <i class="plus circle icon"></i> New
           </router-link>
-          <router-link to="/test" class="item">
-            <i class="graduation cap icon"></i> Test
-          </router-link>
         </div>      
       </div>
   </div>

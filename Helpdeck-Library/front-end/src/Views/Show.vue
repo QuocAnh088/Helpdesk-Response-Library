@@ -14,6 +14,12 @@
         </div>
         <input type="text" readonly  :value="helpdesk.action"/>
       </div>
+      <div class="ui labeled input fluid">
+        <div class="ui label">
+          <i class="info circle icon"></i> Description
+        </div>
+        <input type="text" readonly :value="helpdesk.description"/>
+      </div>
       <div class="actions">
         <router-link :to="{ name: 'edit', params: { id: this.$route.params.id }}">
           Edit Help Desk

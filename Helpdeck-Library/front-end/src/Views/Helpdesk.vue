@@ -1,18 +1,25 @@
 <template>
     <div>
         <h1>Helpdesk Library</h1>
+
+        <div class ="ui icon input">
+            <input type=" text" placeholder="Search ..." v-model="searchQuery">
+            <i class="search icon"></i>
+        </div>
         <table id="helpdesk" class="ui celled compact table">
             <thead>
                 <tr>
                     <th>Code</th>
                     <th>Action</th>
+                    <th>Description</th>
                     <th colspan="3"></th>
                 </tr>
             </thead>
-            <tbody v-if="helpdeck && helpdeck.length > 0">
-                <tr v-for="(help, i) in helpdeck" :key="i">
+            <tbody v-if="filteredHelpdesks && filteredHelpdesks.length > 0">
+                <tr v-for="(help, i) in filteredHelpdesks" :key="i">
                     <td>{{ help.code }}</td>
                     <td>{{ help.action }}</td>
+                    <td>{{ help.description }}</td>
                     
                     <td width="75" class="center aligned">
                         <router-link :to="{ name: 'show', params: { id: help._id } }">Show</router-link>
@@ -42,6 +49,7 @@ export default {
     data() {
         return {
             helpdeck: [],
+            searchQuery: ''
         };
     },
     methods: {
@@ -62,6 +70,22 @@ export default {
         } catch (error) {
             console.error("Lỗi khi tải danh sách:", error);
         }
-    }
+    },
+    computed:{
+        filteredHelpdesks() {
+
+            if (!this.searchQuery) {
+                return this.helpdeck;
+            }
+
+            const lowerCaseQuery = this.searchQuery.toLowerCase();
+
+            return this.helpdeck.filter(help => {
+                const matchCode = help.code && help.code.toLowerCase().includes(lowerCaseQuery);
+
+                return matchCode
+            });
+        }
+    },
 };
 </script>

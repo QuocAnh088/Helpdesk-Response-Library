@@ -26,7 +26,7 @@ export default {
         createOrUpdate: async function(helpdesk) {
         await api.updateHelpdesk(helpdesk);
         this.flash('Help Desk updated successfully!', 'success');
-        this.$router.push(`/helpdesks/${helpdesk._id}`);
+        this.$router.push(`/helpdesk/${helpdesk._id}`);
         }
     }
 };
